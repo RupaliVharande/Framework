@@ -10,8 +10,9 @@ import cucumber.api.junit.Cucumber;
 		features="src\\test\\java\\testCases",
 		glue="stepDef",
 		monochrome=false,
-		tags= {"@dl"}
-		
+		plugin = { "pretty", "html:target/cucumber-reports" },
+		tags= {"@ff"},
+		dryRun =false
 		
 		)
 public class Runner 

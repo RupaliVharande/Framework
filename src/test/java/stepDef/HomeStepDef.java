@@ -1,6 +1,7 @@
 package stepDef;
 
 import cucumber.api.PendingException;
+import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.en.*;
 import generic.SeleniumBase;
@@ -24,6 +25,7 @@ public class HomeStepDef extends SeleniumBase
 	      
 		}
 		
+		
 		@Given("^Verify link count is (\\d+)$")
 		public void verify_link_count_is(int arg1) throws Throwable
 		{
@@ -35,12 +37,13 @@ public class HomeStepDef extends SeleniumBase
 		
 		
 		@After
-		public void close_browser() throws Throwable 
-		{
-			
-		 this.closeApplication();    
+		
+	
+		public void close_browser(Scenario scene) throws Throwable {
+		    // Write code here that turns the phrase above into concrete actions
+			this.captureScreenShot(scene.getName());
+		    this.closeApplication();
 		}
-
 
 
 }
